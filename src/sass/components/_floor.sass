@@ -1,0 +1,396 @@
+@import "vars"
+
+@keyframes stagger
+    0%
+        opacity: .7
+  
+    25%
+        opacity: 0
+  
+    50%
+        opacity: .7
+  
+    100%
+        opacity: 0
+  
+
+.stagger
+    -webkit-animation-name: stagger
+    animation-name: stagger
+    -webkit-animation-duration: 2s
+    animation-duration: 2
+
+@-webkit-keyframes migal 
+  0% 
+  	opacity: 0
+  50% 
+  	opacity: 1
+  100% 
+  	opacity: 0
+
+@-moz-keyframes migal 
+  0% 
+  	opacity: 0
+  50% 
+  	opacity: 1
+  100% 
+  	opacity: 0
+
+@-o-keyframes migal 
+  0% 
+  	opacity: 0
+  50% 
+  	opacity: 1
+  100% 
+  	opacity: 0
+
+@keyframes migal
+  0% 
+  	opacity: 0
+  50% 
+  	opacity: 1
+  100% 
+  	opacity: 0
+ 
+
+.floor
+	display: flex
+	height: 100vh
+	position: relative
+	overflow: hidden
+	// background: linear-gradient(269.28deg, #EB7070 0%, #2B5878 100%);
+	+r(1024)
+		display: block
+		height: auto
+	// @media only screen and (min-height: 850px)  and (max-width: 1366px)
+	// +r(1024)
+	// 	display: block
+	// 	height: auto
+		// overflow: scroll
+	&__col
+		width: 50%
+		display: flex
+		// flex-direction: column
+		+r(1024)
+			width: 100%
+		// @media only screen and (min-height: 850px)  and (max-width: 1366px)
+		// +r(1024)
+		// 	width: 100%
+	&__block
+		position: relative
+		// max-width: 60%
+		img
+			display: block
+			max-width: 100%
+		+r(1024)
+			// height: 50vh
+			min-height: 418px
+		// @media only screen and (min-height: 850px)  and (max-width: 1366px)
+		// +r(1024)
+		// 	min-height: 418px
+		+r(767)
+			min-height: 330px
+			padding-top: 115px
+		// &:before
+		// 	content: ''
+		// 	position: absolute
+		// 	left: 0
+		// 	top: 0
+		// 	bottom: 0
+		// 	right: 0
+		// 	z-index: 9
+		// 	mix-blend-mode: multiply
+		// 	box-shadow: inset 0px 0px 15vw #0C2537
+		// 	+r(767)
+		// 		content: none
+	&__info
+		display: flex
+		flex-direction: column
+		height: 100%
+		width: 100%
+		position: relative
+		+r(1024)
+			position: static
+		// @media only screen and (min-height: 850px)  and (max-width: 1366px)
+		// +r(1024)
+		// 	position: statis
+		// &:before
+		// 	content: ''
+		// 	position: absolute
+		// 	left: 0
+		// 	right: 0
+		// 	z-index: 1000
+		// 	top: 80%
+		// 	bottom: 0
+		// 	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 70%)
+		// 	+r(1024)
+		// 		content: none
+	&__top
+		z-index: 10
+		background-color: #0C2537
+		padding: 90px 88px 25px 119px
+		+r(1024)
+			position: absolute
+			top: 0
+			right: 0
+			border-radius: 0 0 0 30px
+			width: 450px
+			padding: 90px 25px 25px 70px
+		// @media only screen and (min-height: 850px)  and (max-width: 1366px)
+		// +r(1024)
+		// 	position: absolute
+		// 	top: 0
+		// 	right: 0
+		// 	border-radius: 0 0 0 30px
+		// 	width: 450px
+		// 	padding: 90px 25px 25px 70px
+		+r(767)
+			left: 0
+			width: 100%
+			border-radius: 0
+			padding: 60px 10px 15px 40px
+	&__bottom
+		z-index: 16
+		background-color: $white
+		padding: 60px 88px 85px 119px
+		position: relative
+		overflow: hidden
+		// overflow-y: auto
+		height: 100%
+		// position: relative
+		// &:before
+		// 	content: ''
+		// 	position: absolute
+		// 	left: 0
+		// 	right: 0
+		// 	top: 70%
+		// 	bottom: 0
+		// 	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)
+		+r(1024)
+			height: auto
+			padding: 40px 88px 25px
+		// @media only screen and (min-height: 850px)  and (max-width: 1366px)
+		// +r(1024)
+		// 	padding: 40px 88px 25px
+		+r(767)
+			padding: 20px 40px
+	&__bottom-in
+		overflow: scroll
+		height: 100%
+		padding-right: 50px
+		+r(1024)
+			height: auto
+			padding-right: 0
+		// @media only screen and (min-height: 850px)  and (max-width: 1366px)
+		// +r(1024)
+		// 	padding-right: 0
+		&::-webkit-scrollbar
+			width: 5px
+			border-radius: 20px
+			height: 10px
+		&::-webkit-scrollbar-thumb
+			border-width: 1px 1px 1px 2px
+			background-color: $pink
+			border-radius: 20px
+			height: 10px
+		&::-webkit-scrollbar-track-piece
+			height: 10px
+			width: 5px
+	&__img
+		// background: url('../img/characteristics/cam2.jpg')
+		// background-repeat: no-repeat
+		// background-size: cover
+		// background-position: 78% 100%
+		height: 100vh
+		width: 100%
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			bottom: 0
+			right: 0
+			z-index: 9
+			pointer-events: none
+			mix-blend-mode: multiply
+			box-shadow: inset 0px 0px 10vw #0C2537
+			+r(767)
+				content: none
+		+r(1024)
+			height: auto
+		// @media only screen and (min-height: 850px)  and (max-width: 1366px)
+		// +r(1024)
+		// 		height: auto
+		svg
+			height: 100%
+			width: 100%
+			/* width: 100%; */
+			// margin-left: 50%
+			// transform: translate(-50%)
+			+r(1024)
+				height: auto
+			// @media only screen and (min-height: 850px)  and (max-width: 1366px)
+			+r(1024)
+				height: auto
+	&__title
+		margin-bottom: 24px
+		// max-width: 213px
+		+r(767)
+			margin-bottom: 15px
+	&__description
+		height: auto
+		margin-bottom: 40px
+	&__item
+		display: flex
+		margin-bottom: 20px
+		width: 48%
+		+r(450)
+			width: 100%
+	&__icon
+		min-width: 30px
+		text-align: center
+		margin-right: 15px
+	&__text
+		line-height: 2
+	&__decor
+		position: absolute
+		right: -2%
+		top: 80%
+		transform: translateY(-50%)
+		pointer-events: none
+	&__row
+		width: 100%
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		margin-bottom: 20px
+	&__link
+		margin-bottom: 20px
+		svg
+			width: 19px
+			height: 15px
+			+r(767)
+				width: 16px
+				height: 16px
+
+	&__info-block
+		position: absolute
+		top: 50%
+		right: 2%
+		transform: translateY(-50%)
+		width: 130px
+		+r(1024)
+			right: 46px
+		+r(767)
+			display: none
+	&__arrow
+		position: absolute
+		top: 20%
+		right: 4%
+		+r(1024)
+			right: 60px
+			top: 25%
+		+r(767)
+			right: 30px
+
+
+.info-block
+	// position: absolute
+	// top: 50%
+	// right: 25px
+	background: #0C2537
+	color: $white
+	padding: 30px 5px 20px
+	// width: 130px
+	border-radius: 10px
+	text-align: center
+	transform: translateY(-50%)
+	&__line
+		padding: 5px
+		position: absolute
+		top: 50%
+		right: 50%
+		z-index: 10
+		transform: translate(50%, -50%)
+		height: 100%
+		width: 100%
+		pointer-events: none
+	&__line-in
+		height: 100%
+		border: 1px solid #ffffff
+		box-shadow: 0px 0px 10px #EB7070, inset 0px 0px 10px #EB7070, 0px 0px 6px #EB7070, inset 0px 0px 6px #EB7070, 0px 0px 4px #EB7070, inset 0px 0px 4px #EB7070, 0px 0px 2px #EB7070
+		border-radius: 10px
+		animation: flicker 2.5s infinite alternate
+		pointer-events: none
+		+r(767)
+			animation: none
+	&__icon
+		position: absolute
+		top: -30px
+		left: 50%
+		z-index:: 100
+		transform: translateX(-50%)
+		width: 60px
+		height: 60px
+		background-color: #0C2537
+		border-radius: 50%
+		display: flex
+		align-items: center
+		justify-content: center
+		img
+			width: 27px
+	&__icon-line
+		padding: 5px
+		position: absolute
+		top: 50%
+		right: 50%
+		z-index: 10
+		transform: translate(50%, -50%)
+		height: 100%
+		width: 100%
+		pointer-events: none
+	&__icon-line-in
+		height: 100%
+		border: 1px solid #ffffff
+		box-shadow: 0px 0px 10px #EB7070, inset 0px 0px 10px #EB7070, 0px 0px 6px #EB7070, inset 0px 0px 6px #EB7070, 0px 0px 4px #EB7070, inset 0px 0px 4px #EB7070, 0px 0px 2px #EB7070
+		border-radius: 50%
+		animation: flicker 2.5s infinite alternate
+		pointer-events: none
+		+r(767)
+			animation: none
+	&__item
+		white-space: nowrap
+	&__item:not(:last-child)
+		margin-bottom: 5px
+	&_small
+		padding: 10px 15px
+.info-block-floor,
+.info-block-appartments
+	width: 20px
+	margin-right: 5px
+
+// .floor-item-group
+	// opacity: 0
+	// display: block
+	// transition: all 0.3s
+
+.floor-item-link path
+    fill: #E86D6F
+    opacity: 0
+    transition: all .1s
+
+.floor-item-link:hover path
+    opacity: .7
+
+.arrow-tooltip
+	&__text
+		font-size: 10px
+		width: 55px
+	&__icon
+		position: absolute
+		top: -20px
+		left: -40px
+		animation: migal 1.4s infinite
+		opacity: 1
+		pointer-events: none
+		transition-duration: .6s

@@ -1,0 +1,191 @@
+@import "vars"
+
+.about
+	display: flex
+	height: 100vh
+	position: relative
+	overflow: hidden
+	// background: linear-gradient(269.28deg, #EB7070 0%, #2B5878 100%)
+	+r(1024)
+		display: block
+		height: auto
+		// overflow: scroll
+	&__col
+		width: 50%
+		display: flex
+		// flex-direction: column
+		+r(1024)
+			width: 100%
+	&__block
+		position: relative
+		+r(1024)
+			height: 50vh
+			min-height: 418px
+		+r(767)
+			min-height: 330px
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			bottom: 0
+			right: 0
+			z-index: 9
+			mix-blend-mode: multiply
+			box-shadow: inset 0px 0px 15vw #0C2537
+			+r(767)
+				content: none
+	&__info
+		display: flex
+		flex-direction: column
+		height: 100%
+		position: relative
+		+r(1024)
+			position: static
+			height: auto
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			right: 0
+			z-index: 1000
+			top: 80%
+			bottom: 0
+			pointer-events: none
+			background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 70%)
+			+r(1024)
+				content: none
+	&__top
+		z-index: 10
+		background-color: #0C2537
+		padding: 90px 88px 25px 119px
+		+r(1024)
+			position: absolute
+			top: 0
+			right: 0
+			border-radius: 0 0 0 30px
+			width: 450px
+			padding: 90px 25px 25px 70px
+		+r(767)
+			left: 0
+			width: 100%
+			border-radius: 0
+			padding: 60px 10px 15px 40px
+	&__bottom
+		z-index: 16
+		background-color: $white
+		padding: 40px 88px 80px 119px
+		position: relative
+		// overflow-y: auto
+		height: 78vh
+		// position: relative
+		// &:before
+		// 	content: ''
+		// 	position: absolute
+		// 	left: 0
+		// 	right: 0
+		// 	top: 70%
+		// 	bottom: 0
+		// 	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)
+		+r(1024)
+			padding: 40px 88px 25px
+			height: auto
+		+r(767)
+			padding: 20px 40px
+	&__bottom-in
+		overflow-y: scroll
+		height: 100%
+		padding-right: 50px
+		+r(1024)
+			height: auto
+			padding-right: 0
+		&::-webkit-scrollbar
+			width: 5px
+			border-radius: 20px
+			height: 10px
+		&::-webkit-scrollbar-thumb
+			border-width: 1px 1px 1px 2px
+			background-color: $pink
+			border-radius: 20px
+			height: 10px
+		&::-webkit-scrollbar-track-piece
+			height: 10px
+			width: 5px
+	&__img
+		background: url('../img/action1.png')
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: center
+		height: 100%
+		width: 100%
+		+r(1024)
+			background-position: bottom
+	&__title
+		margin-bottom: 24px
+		max-width: 213px
+		+r(767)
+			margin-bottom: 15px
+	&__description
+		height: auto
+		p
+			margin-bottom: 20px
+			+r(767)
+				margin-bottom: 10px
+	&__link-map
+		position: absolute
+		left: 15px
+		bottom: 25%
+		z-index: 100
+		+r(1024)
+			top: 20%
+			bottom: auto
+		+r(767)
+			top: 260px
+			left: 10px
+	&__link-gallery
+		position: absolute
+		left: 15px
+		bottom: 15%
+		z-index: 100
+		+r(1024)
+			top: 28%
+			bottom: auto
+		+r(767)
+			top: 200px
+			left: 10px
+	&__link-flat
+		position: absolute
+		left: 15px
+		top: 25%
+		z-index: 100
+		+r(1024)
+			top: 12%
+		+r(767)
+			top: 140px
+			left: 10px
+	&__decor
+		position: absolute
+		right: -2%
+		top: 50%
+		pointer-events: none 
+		transform: translateY(-50%)
+
+@-webkit-keyframes imageScale
+	from
+		transform: scale(1.2)
+	to
+        transform: scale(1)
+
+@keyframes imageScale
+	from
+		transform: scale(1.2)
+	to
+        transform: scale(1)
+      
+.imageScale
+    transform: scale(1.2)
+    animation-name: imageScale
+    animation-fill-mode: forwards
+    transition: all 10s
+.wow
+   visibility: visible

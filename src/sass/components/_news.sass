@@ -1,0 +1,228 @@
+.news
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    height: 100vh
+    overflow: hidden
+    background-color: #0C2537
+    +h(620)
+      height: auto
+      min-height: 100vh
+    &__top
+      // position: absolute
+      // right: 0
+      // top: 0
+      z-index: 10
+      width: 50%
+      overflow: hidden
+      background-color: #091D2C
+      padding: 90px 10px 25px 119px
+      border-radius: 0px 0px 0px 30px
+      +r(1024)
+        width: 450px
+        padding: 90px 25px 25px 70px
+      +r(767)
+        width: 100%
+        border-radius: 0
+        padding: 60px 10px 15px 40px
+
+.news-content
+  padding: 30px 0 75px
+  width: 100%
+  flex-grow: 1
+  display: flex
+  align-items: center
+  &__in
+    width: 100%
+    max-width: 1180px
+    padding: 0 40px
+    margin: 0 auto
+    +r(1260)
+      padding: 0 80px
+    +r(1023)
+      padding: 0 40px
+  &__btns
+    padding: 0 70px
+    margin-bottom: 25px
+    min-height: 30px
+    +r(767)
+      padding: 0
+  &__btn
+    background: transparent
+    color: #5E8EB0
+    font-size:: 14px
+    margin-right: 60px
+    transition: all 0.3s
+    line-height: 24px
+    cursor: pointer
+    position: relative
+    padding-left: 40px
+    font-family: $MontserratBold
+    +r(767)
+      margin-right: 30px
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      width: 18px
+      height: 3px
+      background: $white
+      opacity: 0
+      visibility: hidden
+    &.active
+      font-size: 24px
+      color: $white
+      +r(767)
+        font-size: 18px
+      &:before
+        opacity: 1
+        visibility: visible
+  &__decor-right
+    position: absolute
+    right: 0
+    pointer-events: none
+    +r(767)
+      display: none
+  &__decor-left
+    position: absolute
+    left: 0
+    transform: rotate(180deg)
+    pointer-events: none
+    +r(767)
+      display: none
+  .slider-list
+    position: relative
+    height: 420px
+    // overflow: hidden
+    +r(1450)
+      height: 300px
+    +r(767)
+      height: 250px
+  .next, .prev
+    width: 60px
+    height: 60px
+
+
+.slider-item
+  position: absolute
+  top: 0
+  left: 0
+  z-index: -1
+  opacity: 0
+  visibility: hidden
+  width: 100%
+  height: 100%
+
+.slider-item.active
+  position: static
+  top: 0
+  left: 0
+  z-index: 100
+  opacity: 1
+  visibility: visible
+
+// .slider-list .slick-slide img
+//   width: 100%
+//   height: 380px
+//   object-fit: cover
+//   +r(767)
+//     height: 250px
+
+.gallery-slider
+  &__img
+    margin: 0 50px
+    padding: 20px
+    position: relative
+    +r(767)
+      margin: 0 30px
+    +r(450)
+      margin: 0 
+    img
+      width: 100%
+      height: 400px
+      object-fit: cover
+      +r(1450)
+        height: 280px
+      +r(767)
+        height: 230px
+  &__img-in
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      width: 100%
+      height: 100%
+      z-index: -1
+      background: #091D2C
+      left: 20px
+      top: -20px
+      bottom: 20px
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      z-index: 1
+      right: 0
+      width: 100%
+      height: 100%
+      background: rgba(0, 0, 0, 0.4)
+  &__info
+    position: absolute
+    bottom: 10%
+    left: 0px
+    color: $white
+    max-width: 80%
+    z-index: 10
+  &__title
+    font-size: 24px
+    font-family: $default-font
+    +r(767)
+      font-size: 18px
+  &__subtitle
+    font-size: 14px
+    font-family: $default-font
+    +r(767)
+      font-size: 10px
+  &__date
+    position: absolute
+    top: 20px 
+    right: -10px
+    color: #5E8EB0
+    transform: rotate(-90deg)
+    transform-origin: right top
+    +r(767)
+      right: 15px
+  &__btn-next,
+  &__btn-prev
+    color: $white
+    cursor: pointer
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    background-color: #091D2C
+    position: absolute
+    z-index: 100
+    transition: all 0.3s
+    transform: translateY(-50%)
+    &:hover
+      background: #E86D6F
+    svg
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+  &__btn-next
+    top: 50%
+    right: -30px
+    +r(767)
+      right: -10px
+  &__btn-prev
+    top: 50%
+    left: -30px
+    +r(767)
+      left: -10px
+    svg
+      transform: rotate(-180deg) translate(-50%, -50%)
+      transform-origin: top left

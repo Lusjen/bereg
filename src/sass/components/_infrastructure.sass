@@ -1,0 +1,201 @@
+@import "vars"
+
+.infrastructure
+	display: flex
+	height: 100vh
+	position: relative
+	overflow: hidden
+	+r(1024)
+		display: block
+		height: auto
+	&__map
+		width: 100%
+		display: flex
+		// flex-direction: column
+	&__content
+		min-width: 450px
+		+r(1024)
+			min-width: 100%
+	&__block
+		position: relative
+		+r(1024)
+			height: 50vh
+			min-height: 418px
+		+r(767)
+			min-height: 330px
+			padding-top: 115px
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			bottom: 0
+			right: 0
+			width: 145%
+			pointer-events: none
+			z-index: 9
+			mix-blend-mode: multiply
+			box-shadow: inset 0px 0px 15vw #0C2537
+	&__info
+		display: flex
+		flex-direction: column
+		height: 100%
+		position: relative
+		+r(1024)
+			position: static
+			height: auto
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			right: 0
+			z-index: 1000
+			top: 80%
+			pointer-events: none
+			bottom: 0
+			background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 70%)
+			+r(1024)
+				content: none
+	&__top
+		z-index: 10
+		background-color: #0C2537
+		padding: 90px 88px 25px 76px
+		+r(1024)
+			position: absolute
+			top: 0
+			right: 0
+			border-radius: 0 0 0 30px
+		+r(767)
+			left: 0
+			border-radius: 0
+			padding: 60px 10px 15px 40px
+	&__bottom
+		z-index: 16
+		background-color: $white
+		padding: 40px 88px 40px 76px
+		position: relative
+		// overflow-y: auto
+		overflow: hidden
+		height: 100%
+		// position: relative
+		// &:before
+		// 	content: ''
+		// 	position: absolute
+		// 	left: 0
+		// 	right: 0
+		// 	top: 70%
+		// 	bottom: 0
+		// 	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)
+		+r(1024)
+			height: auto
+			padding: 40px 88px 25px
+		+r(767)
+			padding: 20px 40px
+	&__bottom-in
+		overflow: auto
+		height: 100%
+		padding-right: 36px
+		+r(1024)
+			height: auto
+		&::-webkit-scrollbar
+			width: 5px
+			border-radius: 20px
+			height: 10px
+		&::-webkit-scrollbar-thumb
+			border-width: 1px 1px 1px 2px
+			background-color: $pink
+			border-radius: 20px
+			height: 10px
+		&::-webkit-scrollbar-track-piece
+			height: 10px
+			width: 5px
+	&__title
+		margin-bottom: 24px
+		+r(767)
+			margin-bottom: 15px
+	&__description
+		p
+			margin-bottom: 20px
+			+r(767)
+				margin-bottom: 10px
+	&__link-map
+		position: absolute
+		left: 15px
+		bottom: 25%
+		z-index: 100
+		+r(1024)
+			top: 20%
+		+r(767)
+			top: 260px
+			left: 10px
+	&__link-gallery
+		position: absolute
+		left: 15px
+		bottom: 15%
+		z-index: 100
+		+r(1024)
+			top: 28%
+			bottom: auto
+		+r(767)
+			top: 200px
+			left: 10px
+	&__link-flat
+		position: absolute
+		left: 15px
+		top: 25%
+		z-index: 100
+		+r(1024)
+			top: 12%
+		+r(767)
+			top: 140px
+			left: 10px
+	&__decor
+		position: absolute
+		right: -2%
+		top: 50%
+		transform: translateY(-50%)
+		pointer-events: none
+	&__item
+		display: flex
+		align-items: center
+		margin-bottom: 10px
+		transition: all 0.3s
+		cursor: pointer
+		&:hover
+			padding-left: 10px 
+	&__img
+		display: flex
+		width: 31px
+		// height: 28px
+		justify-content: center
+		.img-main
+			width: 31px
+			height: 39px
+			display: block
+		img
+			width: 24px
+			height: 28px
+			display: block
+	&__sub-title
+		margin-left: 20px
+	&__button
+		display: inline-block
+		border-radius: 100px
+		background: #E86D6F
+		text-align: center
+		color: $white
+		text-transform: uppercase
+		padding: 10px
+		margin-bottom: 20px
+		cursor: pointer
+		width: 200px
+		font-size: 12px
+		background: linear-gradient(265.91deg, #EB7070 0%, #2B5878 100%)
+		transition: all 0.25s
+		&:hover
+			text-shadow: 0 0 2px #ffffff, 0 0 5px #ffffff, 0 0 10px #AD6872, 0 0 20px #AD6872, 0 0 30px #AD6872, 0 0 40px #AD6872
+
+.main-map
+	width: 100%
+	height: 100%
+

@@ -1,0 +1,934 @@
+@import "vars"
+
+.header
+	position: fixed
+	width: 100%
+	z-index: 100
+	+r(1260)
+		position: absolute
+	&__inner
+		height: 72px
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		max-width: 1920px
+		padding: 20px 30px 0
+		margin: 0 auto
+		+r(767)
+			padding: 10px 20px 0
+	&__info
+		display: flex
+		align-items: center
+		height: 48px
+	&__logo
+		margin-top: 10px
+		+r(1260)
+			max-width: 158px
+		+r(767)
+			max-width: 73px
+		img
+			display: block
+			max-width: 100%
+.menu
+	background: linear-gradient(265.91deg, #EB7070 0%, #2B5878 100%)
+	background-filter: blur(20px)
+	border-radius: 100px
+	padding: 0 40px
+	display: flex
+	justify-content: space-between
+	+r(1260)
+		display: none
+	&__item
+		display: flex
+		align-items: center
+		cursor: pointer
+		position: relative
+		// z-index: 50
+	&__item:not(:last-child)
+		margin-right: 30px
+	// &__title::after
+	// 	width: 15px
+	// 	height: 10px
+	// 	display: inline-block
+	// 	vertical-align: middle
+	// 	content: ''
+	// 	background: url(../img/arrow.svg) no-repeat center
+	// 	transition: all 0.3s
+	&__title
+		padding: 18px 0
+	&__link,
+	&__title
+		color: $white
+		text-transform: uppercase
+		text-decoration: none
+		cursor: pointer
+		font-size: 12px
+		transition: 0.25s
+		&:hover
+			text-shadow: 0 0 2px #ffffff, 0 0 5px #ffffff, 0 0 10px #AD6872, 0 0 20px #AD6872, 0 0 30px #AD6872, 0 0 40px #AD6872
+	&__info
+		display: flex
+
+.svg-tel
+	width: 14px
+	height: 22px
+
+.tel
+	display: flex
+	align-items: center
+	padding: 0 20px
+	margin: 0 22px 
+	color: $black
+	text-decoration: none
+	backdrop-filter: blur(8px)
+	background-color: rgba(255, 255, 255, 0.01)
+	border: 1px solid rgba(43, 88, 120, 0.25)
+	border-radius: 100px
+	height: 50px
+	+r(767)
+		width: 36px
+		padding: 0 11px
+		height: 36px
+		margin: 0 10px
+	&__link
+		margin-left: 5px
+		color: #0C2537
+		+r(767)
+			display: none
+
+.lang
+	display: flex
+	align-self: center
+	text-align: center
+	width: 36px
+	// height: 36px
+	padding: 12px 5px
+	backdrop-filter: blur(8px)
+	background-color: rgba(255, 255, 255, 0.01)
+	border: 1px solid rgba(43, 88, 120, 0.25)
+	border-radius: 50px
+	font-size: 10px
+	max-height: 36px
+	overflow: hidden
+	transition: all 0.5s
+	cursor: pointer
+	&:hover
+		max-height: 82px
+		+r(767)
+			max-height: 75px
+	&__list
+	&__item
+		text-transform: uppercase
+		font-size: 10px
+		color: #0C2537
+		margin-bottom: 6px
+		font-family: $MontserratMedium
+		flex: none
+	&__link
+		color: #0C2537
+		text-decoration: none
+	&__menu-link
+		flex: none
+		svg
+			fill: #0C2537
+			width: 5px
+			height: 9px
+			margin-left: 3px
+			fill: #0C2537
+		svg.svg-white
+			fill: $white
+
+.svg-arrow
+	width: 5px
+	height: 3px
+	margin-left: 5px
+	fill: $white
+
+.submenu
+	opacity: 0
+	visibility: hidden
+	position: absolute
+	left: 20px
+	top: 15px
+	z-index: -1
+	padding: 50px 20px 10px
+	// min-width: 220px
+	text-align: left
+	background: rgba(255, 255, 255, 0.75)
+	backdrop-filter: blur(40px)
+	border-radius: 20px
+	transition: all 0.3s
+	// &:before
+	// 	content: ''
+	// 	position: absolute
+	// 	left: 0
+	// 	z-index: -1
+	// 	top: -20px
+	// 	width: 100%
+	// 	height: 40px
+	// 	background-color: red
+	&__link
+		text-transform: uppercase
+		text-decoration: none
+		cursor: pointer
+		font-size: 12px
+		line-height: 2.1
+		color: #0C2537
+		font-family: "MontserratMedium"
+		transition: 0.25s
+		&:hover
+			color: #E86D6F
+
+.menu__item:hover .submenu
+	opacity: 1
+	visibility: visible
+	left: -20px
+
+.col-white
+	color: $white
+
+.menu-mob,
+.menu-mob__overlay
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+	right: 0
+
+.menu-mob
+	min-height: 100vh
+	position: fixed
+	z-index: 10000
+	pointer-events: none
+	&__top
+		padding: 30px 30px 0
+		display: flex
+		justify-content: space-between
+		margin-bottom: 110px
+		+r(767)
+			margin-bottom: 30px
+			padding: 30px 20px 0
+	&__logo
+		max-width: 160px
+		display: block
+		+r(767)
+			max-width: 73px
+		img
+			width: 100%
+			display: block
+	&__list
+		display: flex
+		flex-wrap: wrap
+	&__item
+		width: 50%
+		display: flex
+		flex-direction: column
+		margin-bottom: 40px
+		padding-left: 7%
+	&__title
+		font-size: 24px
+		color: $white
+		text-transform: uppercase
+		margin-bottom: 20px
+		+r(767)
+			font-size: 12px
+	&__overlay
+		position: absolute
+		z-index: 1
+		background: linear-gradient(269.78deg, #EB7070 0%, #2B5878 100%)
+		opacity: 0
+		transition: opacity 0.3s
+		transition-duration: 0.4s
+	&__content
+		// width: 50%
+		// max-width: 450px
+		// min-width: 240px
+		// padding: 2em
+		// text-align: center
+		position: relative
+		z-index: 5
+		opacity: 0
+
+.sub-menu
+	padding-left: 30px
+	+r(767)
+		padding-left: 15px
+	&__item
+		margin-bottom: 10px
+	&__link
+		font-size: 24px
+		color: $white
+		text-decoration: none
+		+r(767)
+			font-size: 12px
+		
+.btn-close
+	display: flex
+	align-items: center
+	&__text
+		font-size: 12px
+		color: $white
+		text-transform: uppercase
+		margin-right: 5px
+	&__icon
+		display: block
+		span:first-child
+			display: block
+			width: 20px
+			height: 2px
+			background-color: $white
+			transform: rotate(45deg)
+		span:last-child
+			display: block
+			width: 20px
+			height: 2px
+			background-color: $white
+			transform: rotate(-45deg)
+			margin-top: -2px
+
+	
+.menu-mob.menu-mob--open
+	pointer-events: auto
+	overflow-y: scroll
+	background: linear-gradient(269.78deg, #EB7070 0%, #2B5878 100%)
+
+.menu-mob--open .menu-mob__overlay
+	opacity: 1
+	pointer-events: auto
+.menu-mob--close .menu-mob__overlay
+	opacity: 0
+	pointer-events: none
+
+.menu-mob--open .menu-mob__content
+	pointer-events: auto
+
+.menu-mob.menu-mob--open .menu-mob__content,
+.menu-mob.menu-mob--close .menu-mob__content
+	animation-duration: 0.4s
+	animation-fill-mode: forwards
+	animation-timing-function: cubic-bezier(0.7,0,0.3,1)
+
+.menu-mob.menu-mob--open .menu-mob__content
+	animation-name: anim-open
+
+.menu-mob.menu-mob--close .menu-mob__content
+	animation-name: anim-close
+
+@keyframes anim-open
+	0%
+		opacity: 0
+		transform: translate3d(-400px, 0, 0) scale3d(1.4, 0, 1)
+	100%
+		opacity: 1
+		transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
+
+@keyframes anim-close
+	0%
+		opacity: 1
+		transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
+	20%
+		opacity: 1
+		transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
+	100%
+		opacity: 0
+		transform: translate3d(-400px, 0, 0) scale3d(1.4, 0, 1)
+
+.menu-btn-mob
+	display: none
+	font-size: 12px
+	color: $white
+	text-transform: uppercase
+	margin-left: 22px
+	background: linear-gradient(269.28deg, #EB7070 0%, #2B5878 100%)
+	border-radius: 100px
+	width: 124px
+	height: 50px
+	cursor: pointer
+	+r(1260)
+		display: flex
+		align-items: center
+		justify-content: center
+	+r(767)
+		font-size: 10px
+		width: 80px
+		height: 36px
+		margin-left: 10px
+
+
+
+.line
+	margin-right: 12px
+	+r(767)
+		margin-right: 5px
+	&__top
+		display: block
+		background: rgba(255, 255, 255, 0.7)
+		width: 26px
+		height: 2px
+		box-shadow: 0px 0px 60px #EB7070, 0px 0px 20px #EB7070, 0px 0px 12px #EB7070, 0px 0px 8px #EB7070, 0px 0px 4px #EB7070
+		border-radius: 30px
+		margin-bottom: 5px
+	&__bottom
+		display: block
+		background: rgba(255, 255, 255, 0.7)
+		width: 13px
+		height: 2px
+		box-shadow: 0px 0px 60px #EB7070, 0px 0px 20px #EB7070, 0px 0px 12px #EB7070, 0px 0px 8px #EB7070, 0px 0px 4px #EB7070
+		border-radius: 30px
+
+//first loader
+.backdrop
+  position: fixed
+  top: 0
+  left: 0	
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  width: 100vw
+  z-index: 10000
+  background: linear-gradient(265.91deg, #EB7070 0%, #2B5878 100%)
+
+.loader
+  display: flex
+  align-items: center
+  justify-content: center
+
+.dot
+  background: white
+  margin: 5px
+  -webkit-animation-name: loader
+          animation-name: loader
+  -webkit-animation-duration: 1s
+          animation-duration: 1s
+  -webkit-animation-iteration-count: infinite
+          animation-iteration-count: infinite
+  -webkit-animation-direction: alternate
+          animation-direction: alternate
+
+.dot:nth-child(1)
+  -webkit-animation-delay: 0.2s
+          animation-delay: 0.2s
+.dot:nth-child(2)
+  -webkit-animation-delay: 0.4s
+          animation-delay: 0.4s
+.dot:nth-child(3)
+  -webkit-animation-delay: 0.6s
+          animation-delay: 0.6s
+.dot:nth-child(4)
+  -webkit-animation-delay: 0.8s
+          animation-delay: 0.8s
+.dot:nth-child(5)
+  -webkit-animation-delay: 1s
+          animation-delay: 1s
+
+@-webkit-keyframes loader
+  from
+    width: 2px
+    height: 2px
+    border-radius: 1px
+
+  to
+    width: 20px
+    height: 20px
+    border-radius: 10px
+
+
+@keyframes loader
+  from
+    width: 2px
+    height: 2px
+    border-radius: 1px
+
+  to
+    width: 20px
+    height: 20px
+    border-radius: 10px
+ 
+// new loader
+// .backdrop
+//   width: 100%
+//   height: 100vh
+//   filter: url("#goo")
+//   -webkit-filter: url("#goo")
+//   background: linear-gradient(265.91deg, #EB7070 0%, #2B5878 100%)
+// .backdrop svg
+//   position: absolute
+// .backdrop .wrap
+//   position: absolute
+//   left: 50%
+//   top: 50%
+//   transform: translateX(-50%) translateY(-50%)
+//   margin-top: -30px
+//   height: 100px
+//   animation: colorshift 3s linear infinite
+// @keyframes colorshift
+//   0%
+//     filter: hue-rotate(0deg)
+
+//   100%
+//     filter: hue-rotate(360deg)
+
+// .backdrop .wrap .circle
+//   width: 30px
+//   height: 30px
+//   border-radius: 100%
+//   background: #fff968
+//   position: absolute
+//   transform-origin: 50% 170%
+// .backdrop .wrap .circle:nth-of-type(1)
+//   transform: rotate(10deg)
+//   animation: bump1 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump1
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(20deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(2)
+//   transform: rotate(20deg)
+//   animation: bump2 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump2
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(40deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(3)
+//   transform: rotate(30deg)
+//   animation: bump3 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump3
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(60deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(4)
+//   transform: rotate(40deg)
+//   animation: bump4 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump4
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(80deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(5)
+//   transform: rotate(50deg)
+//   animation: bump5 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump5
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(100deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(6)
+//   transform: rotate(60deg)
+//   animation: bump6 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump6
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(120deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(7)
+//   transform: rotate(70deg)
+//   animation: bump7 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump7
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(140deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(8)
+//   transform: rotate(80deg)
+//   animation: bump8 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump8
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(160deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(9)
+//   transform: rotate(90deg)
+//   animation: bump9 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump9
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(180deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(10)
+//   transform: rotate(100deg)
+//   animation: bump10 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump10
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(200deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(11)
+//   transform: rotate(110deg)
+//   animation: bump11 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump11
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(220deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(12)
+//   transform: rotate(120deg)
+//   animation: bump12 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump12
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(240deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(13)
+//   transform: rotate(130deg)
+//   animation: bump13 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump13
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(260deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(14)
+//   transform: rotate(140deg)
+//   animation: bump14 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump14
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(280deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(15)
+//   transform: rotate(150deg)
+//   animation: bump15 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump15
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(300deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(16)
+//   transform: rotate(160deg)
+//   animation: bump16 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump16
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(320deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(17)
+//   transform: rotate(170deg)
+//   animation: bump17 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump17
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(340deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap .circle:nth-of-type(18)
+//   transform: rotate(180deg)
+//   animation: bump18 4s ease-in-out infinite
+//   animation-delay: -1s
+// @keyframes bump18
+//   0%
+//     transform: rotate(0deg)
+
+//   25%
+//     transform: rotate(360deg)
+
+//   75%
+//     transform: rotate(360deg)
+
+//   100%
+//     transform: rotate(360deg)
+
+// .backdrop .wrap:nth-of-type(2)
+//   margin-top: 35px
+//   margin-left: 40px
+// .backdrop .wrap:nth-of-type(2) .circle
+//   animation-direction: reverse
+//   animation-delay: -3s
+// .backdrop .wrap:nth-of-type(3)
+//   margin-top: 35px
+//   margin-left: -40px
+// .backdrop .wrap:nth-of-type(3) .circle
+//   animation-delay: -2s
+
+
+.cssload-loader
+	position: relative
+	width: 200px
+	height: 200px
+	margin: 130px 0
+	perspective: 780px
+
+.cssload-inner
+	position: absolute
+	width: 100%
+	height: 100%
+	box-sizing: border-box
+	-o-box-sizing: border-box
+	-ms-box-sizing: border-box
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	border-radius: 50%
+	-o-border-radius: 50%
+	-ms-border-radius: 50%
+	-webkit-border-radius: 50%
+	-moz-border-radius: 50%
+	&.cssload-one
+		left: 0%
+		top: 0%
+		animation: cssload-rotate-one 1.15s linear infinite
+		-o-animation: cssload-rotate-one 1.15s linear infinite
+		-ms-animation: cssload-rotate-one 1.15s linear infinite
+		-webkit-animation: cssload-rotate-one 1.15s linear infinite
+		-moz-animation: cssload-rotate-one 1.15s linear infinite
+		border-bottom: 5px solid #2B5878
+	&.cssload-two
+		right: 0%
+		top: 0%
+		animation: cssload-rotate-two 1.15s linear infinite
+		-o-animation: cssload-rotate-two 1.15s linear infinite
+		-ms-animation: cssload-rotate-two 1.15s linear infinite
+		-webkit-animation: cssload-rotate-two 1.15s linear infinite
+		-moz-animation: cssload-rotate-two 1.15s linear infinite
+		border-right: 5px solid #0C2537
+	&.cssload-three
+		right: 0%
+		bottom: 0%
+		animation: cssload-rotate-three 1.15s linear infinite
+		-o-animation: cssload-rotate-three 1.15s linear infinite
+		-ms-animation: cssload-rotate-three 1.15s linear infinite
+		-webkit-animation: cssload-rotate-three 1.15s linear infinite
+		-moz-animation: cssload-rotate-three 1.15s linear infinite
+		border-top: 5px solid #E86D6F
+@keyframes cssload-rotate-one
+	0%
+		transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg)
+	100%
+		transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg)
+
+@-o-keyframes cssload-rotate-one
+	0%
+		-o-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg)
+	100%
+		-o-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg)
+
+@-ms-keyframes cssload-rotate-one
+	0%
+		-ms-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg)
+	100%
+		-ms-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg)
+
+@-webkit-keyframes cssload-rotate-one
+	0%
+		-webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg)
+	100%
+		-webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg)
+
+@-moz-keyframes cssload-rotate-one
+	0%
+		-moz-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg)
+	100%
+		-moz-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg)
+
+@keyframes cssload-rotate-two
+	0%
+		transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg)
+	100%
+		transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg)
+
+@-o-keyframes cssload-rotate-two
+	0%
+		-o-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg)
+	100%
+		-o-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg)
+
+@-ms-keyframes cssload-rotate-two
+	0%
+		-ms-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg)
+	100%
+		-ms-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg)
+
+@-webkit-keyframes cssload-rotate-two
+	0%
+		-webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg)
+	100%
+		-webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg)
+
+@-moz-keyframes cssload-rotate-two
+	0%
+		-moz-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg)
+	100%
+		-moz-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg)
+
+@keyframes cssload-rotate-three
+	0%
+		transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg)
+	100%
+		transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg)
+
+@-o-keyframes cssload-rotate-three
+	0%
+		-o-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg)
+	100%
+		-o-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg)
+
+@-ms-keyframes cssload-rotate-three
+	0%
+		-ms-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg)
+	100%
+		-ms-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg)
+
+@-webkit-keyframes cssload-rotate-three
+	0%
+		-webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg)
+	100%
+		-webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg)
+
+@-moz-keyframes cssload-rotate-three
+	0%
+		-moz-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg)
+	100%
+		-moz-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg)

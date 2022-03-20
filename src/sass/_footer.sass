@@ -1,0 +1,35 @@
+.footer
+	position: absolute
+	bottom: 0
+	left: 0
+	right: 0
+	z-index: 10
+	+r(1024)
+		// position: fixed
+		// z-index: 100
+	&_pink
+		+r(1024)
+			background-color: #E86D6F
+			position: fixed
+			z-index: 100
+
+	&__in
+		display: flex
+		justify-content: flex-start
+		align-items: center
+		padding: 5px 0
+
+.copyright
+	color: $white
+	font-size: 12px
+	margin-right: 20px
+	+r(767)
+		font-size: 8px
+
+
+.dev-logo
+	+r(1260)
+		max-width: 51px
+	img
+		display: block
+		max-width: 100%

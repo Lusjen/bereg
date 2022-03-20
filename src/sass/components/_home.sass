@@ -1,0 +1,492 @@
+.hero
+	height: 100vh
+	width: 100vw
+	overflow: hidden
+	position: relative
+	// box-shadow: inset 0px 0px 250px #0C2537
+	// +h(480)
+		// height: 550px
+		// overflow-y: scroll
+	+r(1024)
+		min-height: 100vh
+		height: 100%
+	&::before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		bottom: 0
+		right: 0
+		z-index: 11
+		pointer-events: none
+		background-image: url('../img/shine.png') 
+		background-repeat: no-repeat
+		background-size: cover
+	&__in
+		height: 100%
+		+r(1024)
+			min-height: 100vh 
+		// +h(480)
+		// 	height: 550px
+	&__line
+		padding: 40px
+		position: absolute
+		top: 50%
+		right: 50%
+		z-index: 10
+		transform: translate(50%, -50%)
+		height: 100%
+		width: 100%
+		pointer-events: none
+		+r(767)
+			padding: 20px 
+	&__line-in
+		height: 100%
+		// border: 1px solid #ffffff
+		// box-shadow: 0px 0px 10px #EB7070, inset  0px 0px 10px #EB7070,  0px 0px 6px #EB7070, inset 0px 0px 6px #EB7070, 0px 0px 4px #EB7070, inset 0px 0px 4px #EB7070, 0px 0px 2px #EB7070
+		border-radius: 44px
+		// animation: blink linear infinite 2s
+		// animation: flicker 2.5s infinite alternate
+		pointer-events: none
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			border: 1px solid white
+			border-radius: 44px
+			animation: flicker 3s infinite
+			opacity: 1
+			box-shadow: 0px 0px 20px #EB7070, inset  0px 0px 20px #EB7070,  0px 0px 12px #EB7070, inset 0px 0px 12px #EB7070, 0px 0px 8px #EB7070, inset 0px 0px 8px #EB7070, 0px 0px 4px #EB7070
+			+r(767)
+				animation: none
+	&__content
+		// position: absolute
+		position: relative
+		// top: 20%
+		// right: 0
+		z-index: 10
+		height: 100vh
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		+r(1024)
+			min-height: 100vh
+			height: 100%
+			align-items: stretch
+		// +h(480)
+		// 	height: 100%
+	&__info
+		// position: absolute
+		// top: 20%
+		// right: 34%
+		background-color: rgba(12, 37, 55, 0.05)
+		border-radius: 0px 20px 20px 0px
+		padding: 10px
+		margin-left: -100px
+		width: 600px
+		+r(1260)
+			// max-width: 480px
+			margin-left: -105px
+		+r(1024)
+			width: 510px
+		+r(767)
+			// max-width: 200px
+			// width: 100%
+			width: 230px
+			margin-left: -40px
+	&__wrap
+		// max-width: 360px
+		// max-width: 435px
+	&__info-in
+		border: 1px solid rgba(43, 88, 120, 0.25)
+		border-radius: 0px 20px 20px 0px
+		padding: 15px 15px 15px 130px
+		+r(767)
+			padding: 15px 5px 15px 40px
+	&__action
+		position: relative
+		// top: 20%
+		// right: 0
+		width: 250px
+		max-height: 175px
+		overflow: hidden
+		display: flex
+		background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 23.86%, #0C2537 109.47%), url('../img/action.png')
+		background-size: cover
+		background-repeat: no-repeat
+		border-radius: 20px 0 0 20px
+		padding: 10px
+		text-decoration: none
+		min-height: 174px
+		+r(1260)
+			align-self: flex-end
+			margin-top: 25px
+		+r(767)
+			width: 190px
+			margin-left: 5px
+	&__action-in
+		display: flex
+		align-items: flex-end
+		border: 1px solid #CDEAFF
+		border-radius: 10px 0px 0px 20px
+	&__action-top
+		position: absolute
+		top: 0
+		left: 0
+		height: 30px
+		width: 90px
+		line-height: 30px
+		font-size: 14px
+		color: #ffffff
+		text-align: center
+		border-radius: 0px 0px 20px 0px
+		background: linear-gradient(251.57deg, #EB7070 0%, #2B5878 100%)
+		+r(767)
+			font-size: 10px
+	&__action-title
+		display: flex
+		margin: auto 20px 20px 20px
+		font-size: 14px
+		color: #CDEAFF
+		overflow: hidden
+		text-overflow: ellipsis
+		display: -webkit-box
+		-webkit-line-clamp: 3
+		-webkit-box-orient: vertical
+		+r(767)
+			font-size: 10px
+	&__left
+		// position: absolute
+		height: 100%
+		width: 41%
+		z-index: 10
+		top: 0
+		left: 0
+		transform: scale(1.2)
+		+r(1024)
+			height: auto
+		img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: right
+	&__right
+		display: flex
+		justify-content: space-between
+		// margin-top: 120px
+		padding: 120px 0 
+		flex-grow: 1
+		+r(1260)
+			flex-direction: column
+			width: 59%
+		+r(767)
+			padding: 60px 0 
+		// +r(767)
+		// 	margin-top: 80px 
+	&__bg
+		position: absolute
+		top: 0
+		right: 0
+		left: 0
+		height: 100%
+		box-shadow: inset 0px 0px 15vw #0C2537
+	&__bg1
+		height: 100%
+		z-index: 2
+		img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__bg2
+		width: 100%
+		height: 100%
+		z-index: 5
+	&__bg2-img
+		// position: absolute
+		width: 100%
+		height: 100%
+		object-fit: cover
+	&__bg3
+		position: absolute
+		width: 100%
+		height: 100%
+		img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__bg4
+		width: 100%
+		height: 100%
+		img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__bg5
+		width: 100%
+		height: 100%
+		img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+			box-shadow: inset 0px 0px 15vw #0C2537
+			
+.info-top
+	display: flex
+	justify-content: space-between
+	margin-bottom: 15px
+	+r(767)
+		flex-direction: column 
+	&__col
+		width: 50%
+		display: flex
+		align-items: center
+		+r(767)
+			width: 100%
+	&__title
+		font-size: 24px
+		text-transform: uppercase
+		color: $blue
+		padding-right: 20px
+		border-right: 1px solid rgba(43, 88, 120, 0.25)
+		+r(1260)
+			font-size: 18px
+		+r(767)
+			font-size: 14px
+			border-right: none 
+	&__location
+		display: flex
+		color: #0C2537
+		font-size: 14px
+		padding-left: 20px
+		+r(1024)
+			padding-left: 5px
+		+r(767)
+			font-size: 8px
+			margin-top: 10px
+			align-items: center
+	&__location-text
+		margin-left: 10px
+		color: #0C2537
+		font-size: 14px
+		// +r(1260)
+		// 	font-size: 12px
+		+r(767)
+			font-size: 8px
+.info-bottom
+	padding-left: 20px
+	border-left: 1px solid rgba(43, 88, 120, 0.25)
+	font-size: 18px
+	color: #2B5878
+	+r(1260)
+		font-size: 14px
+	+r(767)
+		font-size: 10px
+
+
+.svg-map
+	width: 16px
+	height: 22px
+	fill: #E86D6F
+
+// @keyframes blink
+// 	  78%
+// 	    // color: green
+// 	    box-shadow:  0px 0px 60px #EB1070, 0px 0px 20px #EB1070, 0px 0px 12px #EB1070, 0px 0px 8px #EB1070, 0px 0px 4px #EB1070
+	  // 79%
+	  //    color: #EB7070
+
+	  // 81%
+	  //   color: inherit
+	  //   box-shadow: inherit
+	  // 82%
+	  //   color: #EB7070
+	  // //   box-shadow: none
+	  // 83%
+	  //   color: inherit
+	  //   box-shadow: inherit
+	  // 92%
+	  //   color: #EB7070
+	  //   box-shadow: none
+	  // 92.5%
+	  //   color: green
+	  //   box-shadow: inherit
+  	// 50%
+  	// 	box-shadow: 0px 0px 20px #EB7020, 0px 0px 20px #EB7020, 0px 0px 12px #EB7020, 0px 0px 8px #EB7020, 0px 0px 4px #EB7020
+  	// 100%
+  	// 	box-shadow: 0px 0px 60px #EB7070, 0px 0px 20px #EB7070, 0px 0px 12px #EB7070, 0px 0px 8px #EB7070, 0px 0px 4px #EB7070
+
+
+// @keyframes flicker
+// 	  0%,
+// 	  25%,
+// 	  54%,
+// 	  56%,
+// 	  100%
+// 	    // text-shadow: -0.2rem -0.2rem 1rem #fff, 0.2rem 0.2rem 1rem #fff,
+// 	    //   0 0 2rem var(--neon-text-color), 0 0 4rem var(--neon-text-color),
+// 	    //   0 0 6rem var(--neon-text-color), 0 0 8rem var(--neon-text-color),
+// 	    //   0 0 10rem var(--neon-text-color);
+
+// 	    // box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff, 0 0 2rem #EB1070, inset 0 0 2rem #EB1070, 0 0 4rem #EB1070, inset 0 0 4rem #EB1070
+// 	    box-shadow: 0px 0px 20px #EB7070, inset  0px 0px 20px #EB7070,  0px 0px 12px #EB7070, inset 0px 0px 12px #EB7070, 0px 0px 8px #EB7070, inset 0px 0px 8px #EB7070, 0px 0px 4px #EB7070
+// 	  25%,
+// 	  26%,
+// 	  27%,
+// 	  28%,
+// 	  29%,
+// 	  30%,
+// 	  75%
+// 	  76%,
+// 	  77%, 
+// 	  78%,
+// 	  79%
+// 	    box-shadow: 0px 0px 10px #EB7070, inset  0px 0px 10px #EB7070,  0px 0px 6px #EB7070, inset 0px 0px 6px #EB7070, 0px 0px 4px #EB7070, inset 0px 0px 4px #EB7070, 0px 0px 2px #EB7070
+
+
+@keyframes flicker
+	  0%,
+	  25%,
+	  75%
+	    opacity: 1 
+	  50%,
+	  100%
+	  	opacity: 0.8 
+
+
+
+@-webkit-keyframes imageScale
+	from
+		transform: scale(1.2)
+	to
+        transform: scale(1)
+
+@keyframes imageScale
+	from
+		transform: scale(1.2)
+	to
+        transform: scale(1)
+      
+.imageScale
+    transform: scale(1.2)
+    animation-name: imageScale
+    animation-fill-mode: forwards
+    transition: all 1.5s
+
+.hero::before
+	animation: sheen 5s ease-in-out infinite
+
+@keyframes sheen
+	0%
+		transform: scale(1)
+	50%
+  		transform: scale(1.1)
+    100%
+    	transform: scale(1)
+
+.info-content
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin-bottom: 10px
+	+r(767)
+		display: block
+	&__title
+		font-size: 12px
+		width: 49%
+		// width: 91%
+		+r(1024)
+			font-size: 11px
+		+r(767)
+			width: 100%
+			margin-bottom: 5px 
+		&:nth-child(2n)
+			padding-left: 20px
+			+r(1024)
+				padding-left: 5px
+			+r(767)
+				padding-left: 0 
+		.link-gradient
+			text-transform: uppercase
+			padding: 0 35px
+			font-size: 12px
+			+r(1024)
+				padding: 0 20px
+			+r(767)
+				font-size: 10px
+				height: 35px
+
+.popup-preview
+  position: fixed
+  top: 0
+  width: 100vw
+  height: 100vh
+  z-index: 1000
+  padding: 100px  10px 50px 
+  background: rgba(12, 37, 55, 0.8)
+  overflow-y: scroll
+  display: flex
+  align-items: center
+  justify-content: center
+  opacity: 0
+  visibility: hidden
+  transition: all 0.3s
+  +h(600)
+  	align-items: flex-start
+  &.open
+    opacity: 1
+    visibility: visible
+    transition: all 0.3s
+  &__content
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: 80%
+    // width: 80vw
+    height: 87vh
+    img
+      display: block
+      max-width: 100%
+      height: 100%
+      object-fit: cover
+  &__btn-close
+    position: absolute
+    width: 30px
+    height: 30px
+    top: -35px
+    right: -35px
+    cursor: pointer
+    transform: rotate(0)
+    transition: transform 0.3s
+    &:hover
+    	transform: rotate(180deg)
+    +r(767)
+    	top: -40px
+    	right: 0
+    span:first-child
+      position: absolute
+      top: 50%
+      left: 50%
+      display: block
+      width: 35px
+      height: 2px
+      background-color: #C4C4C4
+      transform: translate(-50%, -50%) rotate(45deg)
+    span:last-child
+      position: absolute
+      top: 50%
+      left: 50%
+      display: block
+      width: 35px
+      height: 2px
+      background-color: #C4C4C4
+      transform: translate(-50%, -50%) rotate(-45deg)

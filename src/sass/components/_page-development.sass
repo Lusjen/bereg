@@ -1,0 +1,47 @@
+@import "vars"
+
+.page-development
+	width: 100vw
+	height: 100vh
+	background-image: url('../img/gallery/cam.png')
+	background-repeat: no-repeat
+	background-position: right
+	background-size: cover
+	&:before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		bottom: 0
+		right: 0
+		z-index: 9
+		mix-blend-mode: multiply
+		box-shadow: inset 0px 0px 15vw #0C2537
+		+r(767)
+			content: none
+	&__info
+		position: absolute
+		bottom: 80px
+		left: 0
+		padding: 10px 10px 10px 0
+		background: rgba(12, 37, 55, 0.05)
+		border-radius: 0px 20px 20px 0px
+		backdrop-filter: blur(20px)
+	&__info-in
+		border: 1px solid rgba(43, 88, 120, 0.25)
+		border-radius: 0px 20px 20px 0px
+		padding: 20px 62px 20px 120px
+		+r(767)
+			padding: 20px 40px 20px 40px
+	&__title
+		font-size: 24px
+		text-transform: uppercase
+		color: $white
+		+r(767)
+			font-size: 18px
+	&__subtitle
+		font-size: 18px
+		color: $white
+		font-family: $ExtraLight
+		+r(767)
+			font-size: 14px

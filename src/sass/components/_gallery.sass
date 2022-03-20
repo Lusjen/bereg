@@ -1,0 +1,443 @@
+body,
+html
+  // height: 100%
+  // overflow: hidden
+
+
+.gallery
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    height: 100vh
+    &__top
+      // position: absolute
+      // right: 0
+      // top: 0
+      z-index: 10
+      width: 450px
+      overflow: hidden
+      background-color: #0C2537
+      padding: 90px 10px 25px 76px
+      border-radius: 0px 0px 0px 30px
+      +r(767)
+        width: 100%
+        border-radius: 0
+        padding: 60px 10px 15px 40px
+    &__btn-popup
+       position: absolute
+       z-index: 102
+       top: 50%
+       transform: translatey(-50%)
+       left: 70px
+       +r(767)
+        left: 40px
+    &__link
+      position: absolute
+      left: 15px
+      bottom: 12%
+      z-index: 1000
+      +r(767)
+        left: 10px
+    &__tooltip
+      display: none
+      +r(1024)
+        display: block
+        position: absolute
+        bottom: 12%
+        z-index: 1000
+        left: 0
+        right: 0
+        text-align: center
+        color: $white
+
+// .slideshow
+//   position: absolute
+//   z-index: 1
+//   top: 0
+//   left: 0
+//   width: 100vw
+//   height: 100vh
+//   overflow: hidden-
+//   .slider
+//     width: 100vw
+//     height: 100vw
+//     z-index: 2
+    
+//     *
+//       outline: none
+  
+    
+//     .item
+//       height: 100vh
+//       width: 100vw
+//       position: relative
+//       overflow: hidden
+//       border: none
+      
+//       .text
+//         display: none
+//       &:before
+//         content: ''
+//         position: absolute
+//         left: 0
+//         top: 0
+//         bottom: 0
+//         right: 0
+//         z-index: 1
+//         mix-blend-mode: multiply
+//         box-shadow: inset 0px 0px 250px #0C2537
+//       &__link
+//         position: absolute
+//         height: 100%
+//         left: 0
+//         right: 0
+//         z-index: 100
+       
+//       img
+//         min-width: 101%
+//         min-height: 101%
+//         position: absolute
+//         top: 50%
+//         left: 50%
+//         transform: translate(-50%, -50%)
+        
+  
+//   &.slideshow-right
+//     left: 0
+//     z-index: 1
+//     width: 50vw
+//     pointer-events: none
+    
+//     .slider
+//       left: 0
+//       position: absolute
+  
+
+//   .slick-dots
+//       position: fixed
+//       z-index: 100
+//       width: 40px
+//       height: auto
+//       bottom: auto
+//       top: 50%
+//       right: 80px
+//       transform: translateY(-50%)
+//       left: auto
+//       color: #fff
+//       display: block 
+//       li
+//         display: block
+//         width: 100%
+//         height: auto
+//         & button
+//           position: relative
+//           width: 20px
+//           height: 15px
+//           text-align: center
+          
+//           &:before
+//             content: ''
+//             background: #fff
+//             color: #FDD1C3
+//             height: 2px
+//             width: 20px
+//             border-radius: 0
+//             position: absolute
+//             top: 50%
+//             right: 0
+//             left: auto
+//             transform: translateY(-50%)
+//             transition: all .3s ease-in-out
+        
+//         &.slick-active
+//           button
+//             &:before
+//               width: 40px
+//               opacity: 1
+
+// .slideshow-text
+//   position: absolute
+//   top: 50%
+//   left: 50%
+//   transform: translate(-50%, -50%)
+//   z-index: 100
+//   font-size: 80px
+//   width: 100vw
+//   text-align: center
+//   color: #fff
+//   font-family: "ExtraLight"
+//   pointer-events: none
+//   text-transform: uppercase
+//   letter-spacing: 0.2em
+//   line-height: 1
+
+
+// .the-most
+//   position: fixed
+//   z-index: 1
+//   bottom: 0
+//   left: 0
+//   width: 50vw
+//   max-width: 200px
+//   padding: 10px
+//   img
+//     max-width: 100%
+.split-slideshow
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    bottom: 0
+    pointer-events: none
+    right: 0
+    mix-blend-mode: multiply
+    // box-shadow: inset 0px 0px 250px #0C2537 
+    box-shadow: inset 0px 0px 15vw #0C2537
+    z-index: 5
+
+.slideshow
+  position: absolute
+  z-index: 1
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+ 
+  
+  .slider
+    width: 100vw
+    height: 100vw
+    z-index: 2
+    
+    *
+      outline: none  
+    
+    .item
+      height: 100vh
+      width: 100vw
+      position: relative
+      overflow: hidden
+      border: none
+      
+      .text
+        display: none
+      // &:before
+      //   content: ''
+      //   position: absolute
+      //   left: 0
+      //   top: 0
+      //   bottom: 0
+      //   right: 0
+      //   z-index: 1
+      //   mix-blend-mode: multiply
+      //   // box-shadow: inset 0px 0px 250px #0C2537 
+      //   box-shadow: inset 0px 0px 15vw #0C2537 
+      
+      img
+        // min-width: 101%
+        // min-height: 101%
+        // position: absolute
+        // top: 50%
+        // left: 50%
+        // transform: translate(-50%, -50%)
+        //  new style
+        width: 100%
+        height: 100%
+        object-fit: cover
+    
+  .slick-dots
+    position: fixed
+    z-index: 100
+    width: 40px
+    height: auto
+    bottom: auto
+    top: 50%
+    right: 80px
+    transform: translateY(-50%)
+    left: auto
+    color: #fff
+    display: block
+    +r(767)
+      right: 30px
+    
+    li
+      display: block
+      width: 100%
+      height: auto
+      
+      & button
+        position: relative
+        width: 20px
+        height: 15px
+        text-align: center
+        +r(767)
+          height: 10px  
+        
+        &:before
+          content: ''
+          background: #fff
+          color: #FDD1C3
+          height: 2px
+          width: 20px
+          border-radius: 0
+          position: absolute
+          top: 50%
+          right: 0
+          left: auto
+          transform: translateY(-50%)
+          transition: all .3s ease-in-out
+          opacity: 0.6
+          +r(767)
+            width: 10px    
+      
+      &.slick-active
+        button
+          &:before
+            width: 40px
+            opacity: 1
+            +r(767)
+              width: 20px  
+        
+  
+  &.slideshow-right
+    left: 0
+    z-index: 1
+    width: 50vw
+    pointer-events: none
+    
+    .slider
+      left: 0
+      position: absolute
+  
+
+
+.slideshow-text
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  z-index: 100
+  font-size: 80px
+  width: 100vw
+  text-align: center
+  color: #fff
+  font-family: "ExtraLight"
+  pointer-events: none
+  text-transform: uppercase
+  letter-spacing: 0.2em
+  line-height: 1
+  
+  @media (max-width: 1024px)
+    font-size: 40px
+  +r(767)
+    font-size: 18px
+
+  
+
+
+.btn-popup
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background: linear-gradient(180deg, #EB7070 0%, #2B5878 100%)
+  cursor: pointer
+  transition: all 0.5s
+  &:hover
+    box-shadow: 0px 0px 10px #EB7070, inset 0px 0px 10px #EB7070, 0px 0px 6px #EB7070, inset 0px 0px 6px #EB7070, 0px 0px 4px #EB7070, inset 0px 0px 4px #EB7070, 0px 0px 2px #EB7070
+    border: 1px solid white
+  &:hover .svg-arrowgallery
+    transform: scale(0.9)
+  +r(767)
+    width: 30px
+    height: 30px
+
+.svg-arrowgallery
+  width: 28px
+  height: 28px
+  fill: $white
+  transition: all 0.5s
+  +r(767)
+    width: 16px
+    height: 16px
+
+  
+.popup-slide
+  position: fixed
+  width: 100vw
+  height: 100vh
+  z-index: 1001
+  background: rgba(12, 37, 55, 0.8)
+  display: flex
+  align-items: center
+  justify-content: center
+  overflow: auto
+  opacity: 0
+  visibility: hidden
+  transition: all 0.3s
+  &.open
+    opacity: 1
+    visibility: visible
+    transition: all 0.3s
+  &__content
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: 80%
+    // width: 80vw
+    height: 87vh
+    +h(500)
+      overflow: hidden
+    img
+      display: block
+      max-width: 100%
+      height: 100%
+      object-fit: cover
+      +r(767)
+        height: auto
+  &__btn-close
+    position: absolute
+    width: 35px
+    height: 35px
+    right: 25px
+    top: 25px
+    cursor: pointer
+    transform: rotate(0)
+    transition: transform 0.5s
+    &:hover
+      transform: rotate(180deg)
+    +r(767)
+      right: 5px
+      top: 20px
+    span:first-child
+      position: absolute
+      top: 50%
+      left: 50%
+      display: block
+      width: 35px
+      height: 2px
+      background-color: #C4C4C4
+      transform: translate(-50%, -50%) rotate(45deg)
+    span:last-child
+      position: absolute
+      top: 50%
+      left: 50%
+      display: block
+      width: 35px
+      height: 2px
+      background-color: #C4C4C4
+      transform: translate(-50%, -50%) rotate(-45deg)
+      // margin-top: -2px
+
+.tooltip
+  display: flex
+  align-items: center
+  justify-content: center
+  &__icon
+    margin-right: 10px
+    svg
+      fill: $white

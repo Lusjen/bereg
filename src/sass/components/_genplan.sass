@@ -1,0 +1,88 @@
+.genplan
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    height: 100vh
+    overflow: hidden
+    background-color: #0C2537
+    +h(715)
+      height: auto
+      min-height: 100vh
+    +r(767)
+      min-height: 100vh
+      height: auto
+    &__top
+      // position: absolute
+      // right: 0
+      // top: 0
+      z-index: 10
+      width: 50%
+      overflow: hidden
+      background-color: #091D2C
+      padding: 90px 10px 25px 119px
+      border-radius: 0px 0px 0px 30px
+      +r(1024)
+        width: 450px
+        padding: 90px 25px 25px 70px
+      +r(767)
+        width: 100%
+        border-radius: 0
+        padding: 60px 10px 15px 40px
+    &__content
+      flex: 1
+      display: flex
+      width: 100%
+      align-items: center
+      justify-content: space-between
+      padding: 50px 0
+      +r(1024)
+        padding: 40px 0px
+        // flex-direction: column
+    &__content-in
+      max-width: 1100px
+      padding: 0 80px
+      width: 100%
+      margin: 0 auto
+      display: flex
+      justify-content: space-between
+      z-index: 10
+      +r(767)
+        display: block
+    &__img
+      max-width: 416px
+      width: 100%
+      position: relative
+      margin: 0 0  40px 0
+      +r(767)
+        margin: 0 auto 40px
+      &:before
+        content: ''
+        position: absolute
+        width: 100%
+        height: 100%
+        z-index: -1
+        background: #091D2C
+        left: 20px
+        top: -20px
+        bottom: 20px
+      img
+        display: block
+        width: 100%
+      &:last-child
+        margin: 0 0 40px 40px
+        +r(767)
+          margin: 0 auto
+    &__decor-right
+      position: absolute
+      right: 0
+      pointer-events: none
+      +r(767)
+        display: none
+    &__decor-left
+      position: absolute
+      left: 0
+      transform: rotate(180deg)
+      pointer-events: none
+      +r(767)
+        display: none
+

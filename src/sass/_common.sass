@@ -1,0 +1,260 @@
+@import "vars"
+
+body
+	font-family: $default-font
+	line-height: 1.4
+	position: relative
+	font-size: 14px
+	color: $text
+	&.hidden
+		overflow: hidden
+	+r(767)
+		font-size: 10px
+	+rmin(1600)
+		line-height: 1.7
+
+.container
+	max-width: 1920px
+	padding: 0 40px
+	margin: 0 auto
+	position: relative
+	+r(767)
+		padding: 0 20px
+
+.bold
+	font-family: $MontserratBold
+
+.page-title
+	font-size: 24px
+	text-transform: uppercase
+	color: $white
+	margin-bottom: 10px
+	+r(767)
+		font-size: 12px
+
+.breadcrumbs
+	display: flex
+	align-items: center
+	flex-wrap: wrap
+	&__item
+		position: relative
+		padding: 0 40px 0 0
+		font-size: 14px
+		color: #E86D6F
+		margin-bottom: 5px
+		+r(767)
+			font-size: 10px
+		&:not(:last-child):before
+			content: ''
+			position: absolute
+			right: 20px
+			width: 1px
+			height: 100%
+			background-color: #E86D6F
+		&:first-child
+			padding: 0 40px 0 0
+		&:last-child
+			text-overflow: ellipsis
+			overflow: hidden
+			white-space: nowrap
+			
+	&__link
+		color: #FFE6E4
+		font-size: 14px
+		white-space: nowrap
+		+r(767)
+			font-size: 10px
+
+.call-form
+	position: fixed
+	bottom: -15px
+	right: -28px
+	width: 140px
+	height: 140px
+	background: linear-gradient(180deg, rgba(235, 112, 112, 0.4) 0%, rgba(43, 88, 120, 0.4) 100%)
+	border-radius: 50%
+	z-index: 1000
+	padding-left: 20px
+	padding-top: 10px
+	cursor: pointer
+	&__in
+		width: 70px
+		height: 70px
+		background: linear-gradient(180deg, #EB7070 0%, #2B5878 100%)
+		border-radius: 50%
+		display: flex
+		align-items: center
+		justify-content: center
+		svg
+			width: 27px
+			height: 27px
+			fill: $white
+
+.link
+	position: relative
+	display: block
+	// width: 120px
+	height: auto
+	border-radius: 100px
+	background-color: $white
+	text-decoration: none
+	&__circle
+		transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
+		position: absolute
+		margin: 0
+		width: 50px
+		height: 50px
+		border-radius: 100px
+		background: $pink
+		+r(767)
+			width: 30px
+			height: 30px
+		&_blue
+			background: #0C2537
+	&__circle .icon
+		transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
+		position: absolute
+		top: 0
+		bottom: 0
+		margin: auto
+		background: #fff
+	&__circle .icon
+		transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
+		left: 17px
+		width: 14px
+		height: 17px
+		background: none
+		+r(767)
+			left: 7px
+		svg
+			fill: $white
+		.icon-map
+			fill: none
+	&__text
+		transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
+		position: relative
+		// padding: 0 20px
+		padding: 0 15px
+		margin: 0 0 0 40px
+		color: #0C2537
+		font-size: 14px
+		line-height: 50px
+		text-align: center
+		+r(767)
+			font-size: 10px
+			line-height: 30px
+			margin: 0 0 0 20px
+	&_white
+		color: $white
+
+.link:hover .link__circle
+ 	width: 100%
+
+.link:hover .link__circle .icon
+	background: none
+	transform: translate(5px, 0)
+
+.link:hover .link__text
+	color: #fff
+
+.title-md
+	font-size: 24px
+	color: $text
+	+r(767)
+		font-size: 12px
+
+.link-contact
+	max-width: 316px
+	background-color: $pink
+	cursor: pointer
+	.link__text
+		color: $white
+.link-bg
+	background: linear-gradient(244.16deg, #2B5878 0%, #EB7070 100%)
+
+.svg-decor
+	stroke-width: 2
+	stroke-dasharray: 810
+	stroke-dashoffset: 810
+	fill: #E86D6F
+	animation: dash 3s linear
+	animation-delay: 1s
+	@keyframes dash
+		0%
+			stroke-dashoffset: 800
+			stroke: red
+			fill: transparent
+		90%
+			stroke-dashoffset: 50
+			stroke: transparent
+		100%
+			fill: #E86D6F
+
+.svg-decor-gray
+	stroke-width: 2
+	stroke-dasharray: 810
+	stroke-dashoffset: 810
+	fill: #0C2537
+	animation: dash-gray 3s linear
+	@keyframes dash-gray
+		0%
+			stroke-dashoffset: 800
+			stroke: #0C2837
+			fill: transparent
+		90%
+			stroke-dashoffset: 50
+			stroke: transparent
+		100%
+			fill: #0C2537
+
+.link-room
+	text-decoration: none
+	border: 1px solid rgba(12, 37, 55, 0.2)
+	border-radius: 100px
+	width: 100%
+	height: 50px
+	display: flex
+	align-items: center
+	justify-content: center
+	color: #0C2537
+	font-size: 14px
+	transition: all 0.5s
+	&:hover
+		box-shadow:  inset 0px 0px 10px #EB7070, inset 0px 0px 6px #EB7070,  inset 0px 0px 4px #EB7070
+	+r(767)
+		height: 30px
+	&__icon
+		margin-right: 20px
+		margin-top: 5px
+		svg
+			width: 18px
+			fill: #E86D6F
+	&_white
+		color: $white
+		border: 1px solid rgba(255, 255, 255, 0.2)
+		&:hover
+			text-shadow: 0 0 2px #ffffff, 0 0 5px #ffffff, 0 0 10px #AD6872, 0 0 20px #AD6872, 0 0 30px #AD6872, 0 0 40px #AD6872
+
+.link-gradient
+	display: flex
+	align-items: center
+	justify-content: center
+	border-radius: 100px
+	background: #E86D6F
+	text-align: center
+	color: #ffffff
+	padding: 0 10px
+	cursor: pointer
+	text-decoration: none 
+	width: 100%
+	height: 50px
+	font-size: 14px
+	background: -o-linear-gradient(184.09deg, #EB7070 0%, #2B5878 100%)
+	background: linear-gradient(265.91deg, #EB7070 0%, #2B5878 100%)
+	-webkit-transition: all 0.25s
+	-o-transition: all 0.25s
+	transition: all 0.25s
+	&:hover
+		text-shadow: 0 0 2px #ffffff, 0 0 5px #ffffff, 0 0 10px #AD6872, 0 0 20px #AD6872, 0 0 30px #AD6872, 0 0 40px #AD6872
+	+r(767)
+		height: 30px
